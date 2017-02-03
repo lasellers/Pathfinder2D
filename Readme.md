@@ -1,13 +1,15 @@
-PathFinder2D v1.28 2004
-By Lewis Sellers (aka Min)
-Intrafoundation Software
-http://www.intrafoundation.com/pathfinder2d.asp
+# PathFinder2D v1.28 2004
+## By Lewis Sellers (aka Min)
+## Intrafoundation Software
+### http://www.intrafoundation.com/pathfinder2d.asp
 
-PathFinder2D is an open-source experiment in various 2D shortest-path algorithms and techniques. Primary conversation about this software occurs in the newsgroup news://comp.ai.games.
+PathFinder2D is an open-source experiment in various 2D shortest-path algorithms and techniques. Primary conversation about this software originally occured in the newsgroup news://comp.ai.games (2004).
 
-This software was written in C++ using MSVC++ 6 Professional SP5 + MS Platform SDK.
+![Calc](https://github.com/lasellers/Pathfinder2D/blob/master/screenshot.png)
 
-All references to the timings of a “test” machine refer to an old Athlon 1.1ghz with 32/32kb L1 and 256kb L2 cache.
+This software was originally written in C++ using MSVC++ 6 Professional SP5 + MS Platform SDK.
+
+All references to the timings of a “test” machine (pre version 1.28) refer to an old Athlon 1.1ghz with 32/32kb L1 and 256kb L2 cache.
 
 This software was improved with the chatty help of:
 Eternal Vigilance
@@ -48,7 +50,9 @@ Presearch
 Editing the graphics files
 Selecting new start/end points
 
-$#KVersion History
+## Version History
+
+v1.3 Feburary 2017. Pulled from an Windows Installer copy archived in an off-line of Intrafoundation.com and cleaned up a bit for Visual Studio 2015 and hosting on Github.
 
 v1.28 Final August 2012. Recompiled both 64-bit and 32-bit versions.
 
@@ -92,12 +96,13 @@ v1.4	Changed name from AStar to PathFinder. Added Dijkstra.
 v1.3	Reworked to do faster add/deletes. Still needs a sorted list for finding best f. Added high-resolution performance counter by suggestion of Eternal Vigilance. Also various tweak suggestions by Michael Horsch and Justin Heyes-Jones from comp.ai.games.
 v1.2	Minor debuggings + (fairly) significant speed optimizations.
 v1.1	Fixed many, many bugs. Added timers, etc.
-$#KA* Development
+
+## Development
 
 The “development” algorithm is a place reserved for me (and other people) to play around with experimental twists on shortest-path algorithms. Once it stabilizes it gets promoted to its own category. If you implemented a new shortest-path algorithm here (or new variant on one) feel free to send it (and documentation fit for a HLP file) to webmaster@intrafoundation.com.
 
 
-$#KA* Heap Integer No Closed (version 4)
+## Heap Integer No Closed (version 4)
 
 v 4. combined _WORLD and _NODES into a single data structure.
 
@@ -118,7 +123,7 @@ todo v1.20
 ? presearch for all no-paths and mark as permantly_no_path if start/end there
 !! consider delayed queuing if f over best_f*e (or n-nodes) to prevent heaps with levels greater than x (say 5 to 7). Ie, above level n is sort-delayed everything else.
 
-$# K A* Heap Integer (version 3bi)
+## A* Heap Integer (version 3bi)
 
 v 3bi. Changed from float to integer
 
@@ -126,7 +131,7 @@ Version 3bi, ie “A* Heap Integer” (released in Pathfinder v1.18) is essentia
 
 A particular note is that turning on 1.4 diagonals currently have no effect. (This may be addressed in the future).
 
-$# K A* Heap (version 3b)
+## A* Heap (version 3b)
 
 v 3b. removed all trace of linked-lists.
 V 3a. added heaps to v2 linked-list code.
@@ -139,17 +144,17 @@ In version v1.17 all references to linked-lists were removed as they now served 
 
 And, before you ask, the ROUTES graphic is supposed to look like that. It uses a technique generally called a “dirty rectangle” to avoid having to clear the routing information when a new path is solved. This, theoretically, saves a few milliseconds.
 
-$#K A* Complete
+## A* Complete
 
 This is essentially the same as the v2 linked-list A* algorithm except that it keeps it’s CLOSED nodes available to test against for better path data. Slower than general A*.
 
 [currently unfinished. want to finish it? feel free to complete the code and submit a description for this hlp file.]
 
-$ # K BFS Breadth-First Search
+## BFS Breadth-First Search
 
 One of the simplest path-finding algorithms there is, BFS is rather slow, but consistently so.
 
-$ # K Best-First Search
+## K Best-First Search
 
 Slightly more complex than Breadth-first or Depth-first, uses a distance heuristic to guide it to the goal.
 
@@ -158,33 +163,33 @@ The implementation introduced with PathFinder2D v1.23 was hacked together in hal
 Version History:
 Added v1.23. Based on A* Heap version.
 
-$ # K Depth-First Search
+## Depth-First Search
 
 [unimplemented]
 
-$ # K Dijkstra
+## Dijkstra
 
 This is an implementation of Dijkstra’s algorithm using only OPEN nodes. Could be faster, but it’s not bad as is.
 
-$ # K Right-Hand Rule
+## K Right-Hand Rule
 
 [unimplemented]
 
-$ # K D* (Dynamic A*)
+## D* (Dynamic A*)
 
 [unimplemented]
 
-$ # K A* Linked-list (version 2)
+## A* Linked-list (version 2)
 
 The second attempt at A* uses linked lists and inserts nodes in order as they are added.
 
 Originally it was decently fast at about 32ms using DEBUG12 on the test machine. However, it was giving slightly suboptimal results (nothing major as the only people who would notice would be your various path-finding experts) so I finally tracked down the bug and fixed it. Well… now it runs properly, but three times slower at around 90ms. Now, if it hadn’t been that I’d already started on an even faster version using heaps I would have seriously had to consider just leaving it slightly buggy but 3x faster.
 
-$#KA* Arrays (version 1)
+## A* Arrays (version 1)
 
 The very first attempt at an A* algorithm, it uses a simple static array to store node data. It is very slow. DEBUG12 completed in about 330ms on the test machine for the major version 1.11. Come the next release v1.14 however where most the algorithms were corrected it was running around 357ms. For v1.16 while fixing a bug with the pipe maze rendering, saw a few very obvious (now) ways to speedup the path-finding, so now the array version runs in 215ms.
 
-#$K Editing the graphic files
+## Editing the graphic files
 
 Aside from a few internally generated test graphics, PathFinder2D gets all it’s map data from TARGA (ie, TGA) graphics files. All these files are 256x256 256 color TARGAs. They software can load either compressed or uncompressed files of either top-to-bottom or bottom-to-top varieties.
 
@@ -194,11 +199,11 @@ When creating these TGA images in external paint programs as 256-shade grayscale
 
 NOTE: PathFinder has its own internal editor now.
 
-#$K Selecting new start/end points
+## Selecting new start/end points
 
 To change the start and end points, simply press the LEFT mouse button where you want the starting (GREEN) point to be and the RIGHT mouse button to place the (RED) goal point.
 
-#$K Presearch
+## Presearch
 
 To avoid trying to path from a start point to a goal point when there can be NO PATH a “presearch” has been implemented as of v1.20. The presearch is performed after any new map is loaded but before any pathing is done. It provides a way for any of the pathing algorithms to quickly check if there is any need in attempting to path the points.
 
