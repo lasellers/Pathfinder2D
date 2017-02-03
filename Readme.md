@@ -52,7 +52,7 @@ Selecting new start/end points
 
 ## Version History
 
-v1.3 Feburary 2017. Pulled from an Windows Installer copy archived in an off-line of Intrafoundation.com and cleaned up a bit for Visual Studio 2015 and hosting on Github.
+v1.3 February 2017. Pulled from an Windows Installer copy archived in an off-line of Intrafoundation.com and cleaned up a bit for Visual Studio 2015 and hosting on Github.
 
 v1.28 Final August 2012. Recompiled both 64-bit and 32-bit versions.
 
