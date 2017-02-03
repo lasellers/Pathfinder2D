@@ -28,9 +28,7 @@ NOTE: If you notice ANY bugs in this software (either observationally or in the 
 Thanks,
 --min
 
-Version History
-
-The Algorithms:
+## The Algorithms:
 
 Development
 A* Heap Integer No Closed (v4)
@@ -65,6 +63,7 @@ I hope this source-code has been of use to any of you struggling to optimize the
 Thank you.
 
 --Lewis Sellers. A.K.A. “Min”
+
 June 2004.
 v1.25 ? Not sure what changes we made to 1.25 as it wasn’t logged. Presumably the OpenGL 3D code.
 v1.24	July 19th 2003-07-19	Started to add some OpenGL animation code. For the future there are basically 7 areas of improvement for PathFinder2D:
@@ -98,6 +97,7 @@ v1.3	Reworked to do faster add/deletes. Still needs a sorted list for finding be
 v1.2	Minor debuggings + (fairly) significant speed optimizations.
 v1.1	Fixed many, many bugs. Added timers, etc.
 
+
 ## Development
 
 The “development” algorithm is a place reserved for me (and other people) to play around with experimental twists on shortest-path algorithms. Once it stabilizes it gets promoted to its own category. If you implemented a new shortest-path algorithm here (or new variant on one) feel free to send it (and documentation fit for a HLP file) to webmaster@intrafoundation.com.
@@ -123,6 +123,7 @@ todo v1.20
 ! if leaf>=max_leafs remove last leaf, then add new leaf
 ? presearch for all no-paths and mark as permantly_no_path if start/end there
 !! consider delayed queuing if f over best_f*e (or n-nodes) to prevent heaps with levels greater than x (say 5 to 7). Ie, above level n is sort-delayed everything else.
+
 
 ## A* Heap Integer (version 3bi)
 
@@ -172,9 +173,11 @@ Added v1.23. Based on A* Heap version.
 
 [unimplemented]
 
+
 ## Dijkstra
 
 This is an implementation of Dijkstra’s algorithm using only OPEN nodes. Could be faster, but it’s not bad as is.
+
 
 ## Right-Hand Rule
 

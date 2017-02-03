@@ -809,7 +809,6 @@ copy release\pathfinder2d.exe pathfinder2d.exe
     <None Include="small.ico" />
     <None Include="PathFinder2D.dib" />
     <None Include="PathFinder2D_about.wav" />
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

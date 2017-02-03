@@ -146,7 +146,6 @@
     </None>
     <None Include="PathFinder2D.dib" />
     <None Include="PathFinder2D_about.wav" />
-    <None Include="ReadMe.txt" />
     <None Include="Readme.md" />
   </ItemGroup>
 </Project>
