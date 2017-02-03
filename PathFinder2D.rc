@@ -1,0 +1,530 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PATHFINDER2D        ICON    DISCARDABLE     "PathFinder2D.ICO"
+IDI_SMALL               ICON    DISCARDABLE     "SMALL.ICO"
+IDI_PAUSED              ICON    DISCARDABLE     "icon1.ico"
+IDI_UNPAUSED            ICON    DISCARDABLE     "icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_PATHFINDER2D MENU DISCARDABLE 
+BEGIN
+    POPUP "App"
+    BEGIN
+        MENUITEM "P&ause/Resume\tPAUSE or SPACEBAR", IDM_PAUSE_RESUME
+        MENUITEM SEPARATOR
+        POPUP "Color Scheme"
+        BEGIN
+            MENUITEM "White\t1",                    IDM_COLORSCHEME_WHITE
+            MENUITEM "Black\t2",                    IDM_COLORSCHEME_BLACK
+            MENUITEM "Gray\t3",                     IDM_COLORSCHEME_GRAY
+            MENUITEM "Paper\t5",                    IDM_COLORSCHEME_PAPER
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Zoom (x2)\tINS or Z",        IDM_ZOOM
+        MENUITEM SEPARATOR
+        MENUITEM "Re-&Path\tENTER",             IDM_REPATH
+        MENUITEM "&Update and Re-Path\tBACKSPACE", IDM_UPDATE_AND_REPATH
+        MENUITEM SEPARATOR
+        MENUITEM "Presearch\t'",                IDM_PRESEARCH
+        MENUITEM "Presearch View\t/",           IDM_PRESEARCH_VIEW
+        MENUITEM SEPARATOR
+        MENUITEM "&Game Mode\t`",               IDM_GAMEMODE
+        MENUITEM "&Routing View\tINS",          IDM_ROUTING_VIEW
+        MENUITEM SEPARATOR
+        MENUITEM "Level - Single-layer map (256 x 256)", IDM_SINGLELAYER
+        , GRAYED
+        MENUITEM "World - Multi-layer map (64k x 64k)", IDM_MULTILAYER
+        , GRAYED
+        MENUITEM SEPARATOR
+        POPUP "Map Size", GRAYED
+        BEGIN
+            MENUITEM "16x16",                       IDMP_MAPSIZE_16x16
+            , GRAYED
+            MENUITEM "64x64",                       IDM_MAPSIZE_64X64
+            , GRAYED
+            MENUITEM "32x32",                       IDM_MAPSIZE_32X32
+            , GRAYED
+            MENUITEM "256x256",                     IDM_MAPSIZE_256x256
+            , GRAYED
+            MENUITEM "128x128",                     IDM_MAPSIZE_128x128
+            , GRAYED
+            MENUITEM "512x512",                     IDM_MAPSIZE_512X512
+            , GRAYED
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Save Settings",               IDM_SAVE_SETTINGS, GRAYED
+        MENUITEM "Load Settings",               IDM_LOAD_SETTINGS, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tESC",                  IDM_EXIT
+    END
+    POPUP "&Algorithm"
+    BEGIN
+        MENUITEM "A* Heap, Integer, No closed (v4)\tA", IDM_ASTAR
+        MENUITEM "A* Heap, &Integer (v3i)\tI",  IDM_ASTAR_HEAPINTEGER
+        MENUITEM "A* &Heap (v3)\tH",            IDM_ASTAR_HEAP
+        MENUITEM "A* &Linked-list (v2)\tL",     IDM_ASTAR_LINKEDLIST
+        MENUITEM "A* Array (v1)\tO",            IDM_ASTAR_ARRAY
+        MENUITEM "&Dijkstra\tD",                IDM_DIJKSTRA
+        MENUITEM "A* Complete, Linked-list\tC", IDM_ASTAR_COMPLETE, GRAYED
+        MENUITEM "D*",                          IDM_DSTAR, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Best-First &Search\tS",       IDM_BESTFIRST
+        MENUITEM "&Breadth-First Search (BFS)\tB", IDM_BREADTHFIRST
+        MENUITEM "Depth-&First Search (DFS)\tF", IDM_DEPTHFIRST, GRAYED
+        MENUITEM "Rand-Hand Rule\tR",           IDM_RIGHTHANDRULE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "De&velopment (work on new algs here)\tX", IDM_DEVELOPMENT
+    END
+    POPUP "&Search Directions"
+    BEGIN
+        MENUITEM "&4 directions\t4",            IDM_DIRECTIONS4
+        MENUITEM "&8 directions\t8",            IDM_DIRECTIONS8
+    END
+    POPUP "&Distance Methods"
+    BEGIN
+        MENUITEM "&Manhattan\tM\t   abs(x2-x1) + abs(y2-y1), AKA Taxi Cab, Chessboard, etc. (4-point)", 
+                                                IDM_MANHATTAN_DISTANCE
+        MENUITEM "&Diagonal\tG\t   max( abs(x2-x1), abs(y2-y1) ) (8-point)", 
+                                                IDM_DIAGONAL_DISTANCE
+        MENUITEM "&Pythagoras\tP\t  sqrt( (x2-x1)^2 + (y2-y1)^2 ) AKA Euclidian or Straight Line Distance", 
+                                                IDM_PYTHAGORAS_DISTANCE
+        MENUITEM "&Simple Pythagoras\t;\t  (x2-x1)^2 + (y2-y1)^2 ", 
+                                                IDM_SIMPLE_PYTHAGORAS_DISTANCE
+
+    END
+    POPUP "&Cost"
+    BEGIN
+        MENUITEM "Cost by &Terrain\tT",         IDM_COST_BY_TERRAIN
+        POPUP "&Uniform Cost"
+        BEGIN
+            MENUITEM "16.0",                        IDM_COST_16
+            MENUITEM "8.0",                         IDM_COST_8
+            MENUITEM "4.0",                         IDM_COST_4
+            MENUITEM "2.0",                         IDM_COST_2
+            MENUITEM "1.0\tU",                      IDM_COST_1
+            MENUITEM "0.5",                         IDM_COST_0_5
+            MENUITEM "0.25",                        IDM_COST_0_25
+            MENUITEM "0 .125",                      IDM_COST_0_125
+            MENUITEM "0.0",                         IDM_COST_0
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Median Terrain Cost"
+        BEGIN
+            MENUITEM "&1",                          IDM_MEDIAN_1
+            MENUITEM "&8",                          IDM_MEDIAN_8
+            MENUITEM "1&6",                         IDM_MEDIAN_16
+            MENUITEM "&Auto",                       IDM_MEDIAN_AUTO
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Diagonal Cost "
+        BEGIN
+            MENUITEM "1.&0\t,",                     IDM_DIAGONAL_COST_1
+            MENUITEM "1.&4\t.",                     IDM_DIAGONAL_COST_1_4
+        END
+    END
+    POPUP "&Maps"
+    BEGIN
+        MENUITEM "&Draw Mode\tTAB",             IDM_DRAWMODE
+        MENUITEM SEPARATOR
+        MENUITEM "&Open TGA Map\tALT-O",        IDM_MAP_OPEN
+        MENUITEM "&Save TGA Map\tALT-S",        IDM_MAP_SAVE
+        MENUITEM SEPARATOR
+        POPUP "Terrain Maps"
+        BEGIN
+            MENUITEM "Mars 200X200",                IDM_MAP_MARS200X200
+            MENUITEM "Mars",                        IDM_MAP_MARS
+            MENUITEM "Clutter",                     IDM_MAP_CLUTTER
+            MENUITEM "Swirl",                       IDM_MAP_SWIRL
+            MENUITEM "Chi",                         IDM_MAP_CHI
+            MENUITEM "Author",                      IDM_MAP_AUTHOR
+            MENUITEM "X",                           IDM_MAP_X
+            MENUITEM "Wiggling Snake",              IDM_MAP_WIGGLINGSNAKE
+            MENUITEM "The Hill",                    IDM_MAP_HILL
+            MENUITEM "Flower",                      IDM_MAP_FLOWER
+            MENUITEM "Islands",                     IDM_MAP_ISLANDS
+            MENUITEM "Island",                      IDM_MAP_ISLAND
+        END
+        POPUP "Mazes and Labyrinths"
+        BEGIN
+            MENUITEM "Square Maze",                 IDM_MAP_SQUARE_MAZE
+            MENUITEM "Perfect Maze",                IDM_MAP_PERFECT_MAZE
+            MENUITEM "Braid Maze",                  IDM_MAP_BRAID_MAZE
+            MENUITEM "Crack Maze",                  IDM_MAP_CRACK_MAZE
+            MENUITEM "Cavern Maze",                 IDM_MAP_CAVERN_MAZE
+            MENUITEM "Diagonal Maze",               IDM_MAP_DIAGONAL_MAZE
+            MENUITEM "Spiral Maze",                 IDM_MAP_SPIRAL_MAZE
+            MENUITEM "Segment Maze",                IDM_MAP_SEGMENT_MAZE
+            MENUITEM "Hex Maze",                    IDM_MAP_HEX_MAZE
+            MENUITEM "Circle Maze",                 IDM_MAP_CIRCLE_MAZE
+            MENUITEM SEPARATOR
+            MENUITEM "Labyrinth",                   IDM_MAP_LABYRINTH
+            MENUITEM "Unicursal Maze",              IDM_MAP_UNICURSAL_MAZE
+            MENUITEM "Replica Labyrinth",           IDM_MAP_REPLICA_LABYRINTH
+
+            MENUITEM "Man in the Middle Labyrinth", IDM_MAP_MAN_IN_THE_MIDDLE_LABYRINTH
+
+            MENUITEM "Cretan Labyrinth",            IDM_MAP_CRETAN_LABYRINTH
+        END
+        POPUP "Technical Maps"
+        BEGIN
+            MENUITEM "Box on Box no G",             IDM_MAP_BOXONBOXNOG
+            MENUITEM "Box on Box",                  IDM_MAP_BOXONBOX
+            MENUITEM "comp.ai.games straight line", IDM_MAP_STRAIGHTLINE
+            MENUITEM "Grid",                        IDM_MAP_GRID
+            MENUITEM "CheckerBoard",                IDM_MAP_CHECKERBOARD
+            MENUITEM "Pipe Maze",                   IDM_MAP_PIPEMAZE
+            MENUITEM "Random",                      IDM_MAP_RANDOM
+            MENUITEM "Big Box",                     IDM_MAP_BIGBOX
+            MENUITEM "Random Boxes",                IDM_MAP_RANDOMBOXES
+            MENUITEM "Random Open Boxes",           IDM_MAP_RANDOMOPENBOXES
+            MENUITEM "Random Terrain",              IDM_MAP_RANDOMTERRAIN
+            MENUITEM "Gates",                       IDM_MAP_GATES
+            MENUITEM "Crash Me",                    IDM_MAP_CRASHME
+            MENUITEM "No Path",                     IDM_MAP_NO_PATH
+            MENUITEM "Clear Path",                  IDM_MAP_CLEAR_PATH
+            MENUITEM "Zig Zag",                     IDM_MAP_ZIGZAG
+        END
+    END
+    POPUP "De&velopers"
+    BEGIN
+        MENUITEM "DEBUG12 - Mars 200x200 4d 1.0diag manhat\tF12", 
+                                                IDM_DEBUG12
+        MENUITEM "DEBUG11 - Mars, no path\tF11", IDM_DEBUG11
+        MENUITEM "DEBUG10 - Mars\tF10",         IDM_DEBUG10
+        MENUITEM "DEBUG9 - Line\tF9",           IDM_DEBUG9
+        MENUITEM "DEBUG8 - Simple\tF8",         IDM_DEBUG8
+        MENUITEM "DEBUG7 - Pipes\tF7",          IDM_DEBUG7
+        MENUITEM "DEBUG6 - Clutter\tF6",        IDM_DEBUG6
+        MENUITEM "DEBUG5 - Random\tF5",         IDM_DEBUG5
+        MENUITEM "DEBUG4 - diagonal line NW to SE\tF4", IDM_DEBUG4
+        MENUITEM "DEBUG3 - diagonal line NE to SW\tF3", IDM_DEBUG3
+        MENUITEM "DEBUG2 - horizontal line\tF2", IDM_DEBUG2
+        MENUITEM "DEBUG1 - two point horiz line\tF1", IDM_DEBUG1
+        MENUITEM SEPARATOR
+        MENUITEM "ALT-DEBUG12 - Mars 200x200 8d 1.4diag pythag\tALT-F12", 
+                                                IDM_ALTDEBUG12
+        MENUITEM "ALT-DEBUG11 - Square Maze\tALT-F11", IDM_ALTDEBUG11
+        MENUITEM "ALT-DEBUG10 - Unicursal Maze\tALT-F10", IDM_ALTDEBUG10
+        MENUITEM "ALT-DEBUG9 - Hex Maze\tALT-F9", IDM_ALTDEBUG9
+        MENUITEM "ALT-DEBUG8 - Labyrinth\tALT-F8", IDM_ALTDEBUG8
+        MENUITEM "ALT-DEBUG7 - Circle Maze\tALT-F7", IDM_ALTDEBUG7
+        MENUITEM "ALT-DEBUG5 - Random points/map\tALT-F5", IDM_ALTDEBUG5
+        MENUITEM "ALT-DEBUG1 - Gate Maze\tALT-F1", IDM_ALTDEBUG1
+        MENUITEM SEPARATOR
+        MENUITEM "CTRL-DEBUG12 - Clutter, Random [MULTI-AI]\tCTRL-F12", 
+                                                IDM_CTRLDEBUG12
+        MENUITEM "CTRL-DEBUG5 - Random map [MULTI-AI]\tCTRL-F5", 
+                                                IDM_CTRLDEBUG5
+    END
+    POPUP "S&peed"
+    BEGIN
+        POPUP "FPS"
+        BEGIN
+            MENUITEM "60 fps",                      IDM_FPS_60
+            MENUITEM "30 fps",                      IDM_FPS_30
+            MENUITEM "10 fps",                      IDM_FPS_10
+            MENUITEM "1 fps",                       IDM_FPS_1
+            MENUITEM "10 seconds per frame",        IDM_FPS_10S
+        END
+        POPUP "Iterations per FPS"
+        BEGIN
+            MENUITEM "1 (slow, see every iteration)\t-", IDM_ITERATIONS_1
+            MENUITEM "10",                          IDM_ITERATIONS_10
+            MENUITEM "100\t/",                      IDM_ITERATIONS_100
+            MENUITEM "1000 (very fast, usually best)\t*", 
+                                                    IDM_ITERATIONS_1000
+            MENUITEM "10000 (complex maps in a few passes)", 
+                                                    IDM_ITERATIONS_10000
+            MENUITEM "Entire map before displaying\t+", IDM_ITERATIONS_FULL
+        END
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents",                   IDM_CONTENTS
+        MENUITEM "&Index",                      IDM_INDEX
+        MENUITEM "&Find",                       IDM_FIND
+        MENUITEM SEPARATOR
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_PATHFINDER2D ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "'",            IDM_PRESEARCH,          ASCII,  NOINVERT
+    ",",            IDM_DIAGONAL_COST_1,    ASCII,  NOINVERT
+    ".",            IDM_DIAGONAL_COST_1_4,  ASCII,  NOINVERT
+    "/",            IDM_PRESEARCH_VIEW,     ASCII,  NOINVERT
+    "/",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+    "1",            IDM_COLORSCHEME_WHITE,  VIRTKEY, NOINVERT
+    "2",            IDM_COLORSCHEME_BLACK,  VIRTKEY, NOINVERT
+    "3",            IDM_COLORSCHEME_GRAY,   VIRTKEY, NOINVERT
+    "4",            IDM_DIRECTIONS4,        VIRTKEY, NOINVERT
+    "5",            IDM_COLORSCHEME_PAPER,  VIRTKEY, NOINVERT
+    "8",            IDM_DIRECTIONS8,        VIRTKEY, NOINVERT
+    ";",            IDM_SIMPLE_PYTHAGORAS_DISTANCE, ASCII, NOINVERT
+    "?",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+    "A",            IDM_ASTAR,              VIRTKEY, NOINVERT
+    "B",            IDM_BREADTHFIRST,       VIRTKEY, NOINVERT
+    "C",            IDM_ASTAR_COMPLETE,     VIRTKEY, NOINVERT
+    "D",            IDM_DIJKSTRA,           VIRTKEY, NOINVERT
+    "F",            IDM_DFS,                VIRTKEY, CONTROL, NOINVERT
+    "G",            IDM_DIAGONAL_DISTANCE,  VIRTKEY, NOINVERT
+    "H",            IDM_ASTAR_HEAP,         VIRTKEY, NOINVERT
+    "I",            IDM_ASTAR_HEAPINTEGER,  VIRTKEY, NOINVERT
+    "L",            IDM_ASTAR_LINKEDLIST,   VIRTKEY, NOINVERT
+    "M",            IDM_MANHATTAN_DISTANCE, VIRTKEY, NOINVERT
+    "O",            IDM_ASTAR_ARRAY,        VIRTKEY, NOINVERT
+    "O",            IDM_MAP_OPEN,           VIRTKEY, ALT, NOINVERT
+    "P",            IDM_PYTHAGORAS_DISTANCE, VIRTKEY, NOINVERT
+    "R",            IDM_RIGHTHANDRULE,      VIRTKEY, NOINVERT
+    "S",            IDM_BESTFIRST,          VIRTKEY, NOINVERT
+    "T",            IDM_COST_BY_TERRAIN,    VIRTKEY, NOINVERT
+    "U",            IDM_COST_1,             VIRTKEY, NOINVERT
+    VK_ADD,         IDM_ITERATIONS_FULL,    VIRTKEY, NOINVERT
+    VK_BACK,        IDM_UPDATE_AND_REPATH,  VIRTKEY, NOINVERT
+    VK_DELETE,      IDM_MAP_CLEAR_PATH,     VIRTKEY, NOINVERT
+    VK_DIVIDE,      IDM_ITERATIONS_100,     VIRTKEY, NOINVERT
+    VK_ESCAPE,      IDM_EXIT,               VIRTKEY, NOINVERT
+    VK_F1,          IDM_DEBUG1,             VIRTKEY, NOINVERT
+    VK_F1,          IDM_ALTDEBUG1,          VIRTKEY, ALT, NOINVERT
+    VK_F10,         IDM_DEBUG10,            VIRTKEY, NOINVERT
+    VK_F10,         IDM_ALTDEBUG10,         VIRTKEY, ALT, NOINVERT
+    VK_F11,         IDM_DEBUG11,            VIRTKEY, NOINVERT
+    VK_F11,         IDM_ALTDEBUG11,         VIRTKEY, ALT, NOINVERT
+    VK_F12,         IDM_DEBUG12,            VIRTKEY, NOINVERT
+    VK_F12,         IDM_CTRLDEBUG12,        VIRTKEY, CONTROL, NOINVERT
+    VK_F12,         IDM_ALTDEBUG12,         VIRTKEY, ALT, NOINVERT
+    VK_F2,          IDM_DEBUG2,             VIRTKEY, NOINVERT
+    VK_F3,          IDM_DEBUG3,             VIRTKEY, NOINVERT
+    VK_F4,          IDM_DEBUG4,             VIRTKEY, NOINVERT
+    VK_F5,          IDM_DEBUG5,             VIRTKEY, NOINVERT
+    VK_F5,          IDM_CTRLDEBUG5,         VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          IDM_ALTDEBUG5,          VIRTKEY, ALT, NOINVERT
+    VK_F6,          IDM_DEBUG6,             VIRTKEY, NOINVERT
+    VK_F7,          IDM_DEBUG7,             VIRTKEY, NOINVERT
+    VK_F7,          IDM_ALTDEBUG7,          VIRTKEY, ALT, NOINVERT
+    VK_F8,          IDM_DEBUG8,             VIRTKEY, NOINVERT
+    VK_F8,          IDM_ALTDEBUG8,          VIRTKEY, ALT, NOINVERT
+    VK_F9,          IDM_DEBUG9,             VIRTKEY, NOINVERT
+    VK_F9,          IDM_ALTDEBUG9,          VIRTKEY, ALT, NOINVERT
+    VK_INSERT,      IDM_ROUTING_VIEW,       VIRTKEY, NOINVERT
+    VK_MULTIPLY,    IDM_ITERATIONS_1000,    VIRTKEY, NOINVERT
+    VK_NEXT,        IDM_NEXT_AI,            VIRTKEY, NOINVERT
+    VK_NUMPAD0,     IDM_ROUTING_VIEW,       VIRTKEY, NOINVERT
+    VK_PAUSE,       IDM_PAUSE_RESUME,       VIRTKEY, NOINVERT
+    VK_PRIOR,       IDM_PREV_AI,            VIRTKEY, NOINVERT
+    VK_RETURN,      IDM_REPATH,             VIRTKEY, NOINVERT
+    VK_SPACE,       IDM_PAUSE_RESUME,       VIRTKEY, NOINVERT
+    VK_SUBTRACT,    IDM_ITERATIONS_1,       VIRTKEY, NOINVERT
+    VK_TAB,         IDM_DRAWMODE,           VIRTKEY, NOINVERT
+    "X",            IDM_DEVELOPMENT,        VIRTKEY, NOINVERT
+    "Z",            IDM_ZOOM,               VIRTKEY, NOINVERT
+    "\\",           IDM_RANDOM_STARTEND,    ASCII,  NOINVERT
+    "`",            IDM_GAMEMODE,           ASCII,  NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 230, 151
+STYLE WS_POPUP | WS_CAPTION | WS_THICKFRAME
+CAPTION "About PathFinder2D"
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
+    LTEXT           "PathFinder2D Version 1.26 FINAL",IDC_STATIC,62,7,119,8,
+                    SS_NOPREFIX
+    LTEXT           "by Lewis Sellers (AKA Min)",IDC_STATIC,62,15,119,8
+    LTEXT           "Copyright (C) May/June/July 2003, June 2004",IDC_STATIC,
+                    62,24,164,8
+    LTEXT           "Intrafoundation.com",IDC_STATIC,62,49,119,8
+    LTEXT           "Brought to you by the sound stylings of the new Linkin Park CD.",
+                    IDC_STATIC,1,72,220,10
+    CONTROL         130,IDC_STATIC,"Static",SS_BITMAP,0,0,58,72
+    LTEXT           "(With a little help from Nickelback and Radiohead.)",
+                    IDC_STATIC,0,82,219,12
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 141
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PATHFINDER2D        BITMAP  DISCARDABLE     "PathFinder2D.dib"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAVE_ABOUT          WAVE    DISCARDABLE     "PathFinder2D_about.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_POINTER             CURSOR  DISCARDABLE     "arrow.cur"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,26,0,0
+ PRODUCTVERSION 1,26,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Programmed by Lewis Sellers, http://www.intrafoundation.com\0"
+            VALUE "CompanyName", "Intrafoundation Software\0"
+            VALUE "FileDescription", "PathFinder2D\0"
+            VALUE "FileVersion", "1, 26, 0, 0\0"
+            VALUE "InternalName", "PathFinder2D\0"
+            VALUE "LegalCopyright", "Copyright © 2003, 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PathFinder2D.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Intrafoundation Software PathFinder2D\0"
+            VALUE "ProductVersion", "1, 26, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "PathFinder2D v1.26 FINAL- Intrafoundation.com"
+    IDC_PATHFINDER2D        "PATHFINDER2D"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
