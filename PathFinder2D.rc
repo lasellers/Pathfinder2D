@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -16,13 +16,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -31,17 +29,21 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_PATHFINDER2D        ICON    DISCARDABLE     "PathFinder2D.ICO"
-IDI_SMALL               ICON    DISCARDABLE     "SMALL.ICO"
-IDI_PAUSED              ICON    DISCARDABLE     "icon1.ico"
-IDI_UNPAUSED            ICON    DISCARDABLE     "icon2.ico"
+IDI_PATHFINDER2D        ICON                    "PathFinder2D.ICO"
+
+IDI_SMALL               ICON                    "SMALL.ICO"
+
+IDI_PAUSED              ICON                    "icon1.ico"
+
+IDI_UNPAUSED            ICON                    "icon2.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Menu
 //
 
-IDC_PATHFINDER2D MENU DISCARDABLE 
+IDC_PATHFINDER2D MENU
 BEGIN
     POPUP "App"
     BEGIN
@@ -66,25 +68,17 @@ BEGIN
         MENUITEM "&Game Mode\t`",               IDM_GAMEMODE
         MENUITEM "&Routing View\tINS",          IDM_ROUTING_VIEW
         MENUITEM SEPARATOR
-        MENUITEM "Level - Single-layer map (256 x 256)", IDM_SINGLELAYER
-        , GRAYED
-        MENUITEM "World - Multi-layer map (64k x 64k)", IDM_MULTILAYER
-        , GRAYED
+        MENUITEM "Level - Single-layer map (256 x 256)", IDM_SINGLELAYER, GRAYED
+        MENUITEM "World - Multi-layer map (64k x 64k)", IDM_MULTILAYER, GRAYED
         MENUITEM SEPARATOR
         POPUP "Map Size", GRAYED
         BEGIN
-            MENUITEM "16x16",                       IDMP_MAPSIZE_16x16
-            , GRAYED
-            MENUITEM "64x64",                       IDM_MAPSIZE_64X64
-            , GRAYED
-            MENUITEM "32x32",                       IDM_MAPSIZE_32X32
-            , GRAYED
-            MENUITEM "256x256",                     IDM_MAPSIZE_256x256
-            , GRAYED
-            MENUITEM "128x128",                     IDM_MAPSIZE_128x128
-            , GRAYED
-            MENUITEM "512x512",                     IDM_MAPSIZE_512X512
-            , GRAYED
+            MENUITEM "16x16",                       IDMP_MAPSIZE_16x16, GRAYED
+            MENUITEM "64x64",                       IDM_MAPSIZE_64X64, GRAYED
+            MENUITEM "32x32",                       IDM_MAPSIZE_32X32, GRAYED
+            MENUITEM "256x256",                     IDM_MAPSIZE_256x256, GRAYED
+            MENUITEM "128x128",                     IDM_MAPSIZE_128x128, GRAYED
+            MENUITEM "512x512",                     IDM_MAPSIZE_512X512, GRAYED
         END
         MENUITEM SEPARATOR
         MENUITEM "Save Settings",               IDM_SAVE_SETTINGS, GRAYED
@@ -117,15 +111,10 @@ BEGIN
     END
     POPUP "&Distance Methods"
     BEGIN
-        MENUITEM "&Manhattan\tM\t   abs(x2-x1) + abs(y2-y1), AKA Taxi Cab, Chessboard, etc. (4-point)", 
-                                                IDM_MANHATTAN_DISTANCE
-        MENUITEM "&Diagonal\tG\t   max( abs(x2-x1), abs(y2-y1) ) (8-point)", 
-                                                IDM_DIAGONAL_DISTANCE
-        MENUITEM "&Pythagoras\tP\t  sqrt( (x2-x1)^2 + (y2-y1)^2 ) AKA Euclidian or Straight Line Distance", 
-                                                IDM_PYTHAGORAS_DISTANCE
-        MENUITEM "&Simple Pythagoras\t;\t  (x2-x1)^2 + (y2-y1)^2 ", 
-                                                IDM_SIMPLE_PYTHAGORAS_DISTANCE
-
+        MENUITEM "&Manhattan\tM\t   abs(x2-x1) + abs(y2-y1), AKA Taxi Cab, Chessboard, etc. (4-point)", IDM_MANHATTAN_DISTANCE
+        MENUITEM "&Diagonal\tG\t   max( abs(x2-x1), abs(y2-y1) ) (8-point)", IDM_DIAGONAL_DISTANCE
+        MENUITEM "&Pythagoras\tP\t  sqrt( (x2-x1)^2 + (y2-y1)^2 ) AKA Euclidian or Straight Line Distance", IDM_PYTHAGORAS_DISTANCE
+        MENUITEM "&Simple Pythagoras\t;\t  (x2-x1)^2 + (y2-y1)^2 ", IDM_SIMPLE_PYTHAGORAS_DISTANCE
     END
     POPUP "&Cost"
     BEGIN
@@ -195,9 +184,7 @@ BEGIN
             MENUITEM "Labyrinth",                   IDM_MAP_LABYRINTH
             MENUITEM "Unicursal Maze",              IDM_MAP_UNICURSAL_MAZE
             MENUITEM "Replica Labyrinth",           IDM_MAP_REPLICA_LABYRINTH
-
             MENUITEM "Man in the Middle Labyrinth", IDM_MAP_MAN_IN_THE_MIDDLE_LABYRINTH
-
             MENUITEM "Cretan Labyrinth",            IDM_MAP_CRETAN_LABYRINTH
         END
         POPUP "Technical Maps"
@@ -222,8 +209,7 @@ BEGIN
     END
     POPUP "De&velopers"
     BEGIN
-        MENUITEM "DEBUG12 - Mars 200x200 4d 1.0diag manhat\tF12", 
-                                                IDM_DEBUG12
+        MENUITEM "DEBUG12 - Mars 200x200 4d 1.0diag manhat\tF12", IDM_DEBUG12
         MENUITEM "DEBUG11 - Mars, no path\tF11", IDM_DEBUG11
         MENUITEM "DEBUG10 - Mars\tF10",         IDM_DEBUG10
         MENUITEM "DEBUG9 - Line\tF9",           IDM_DEBUG9
@@ -236,8 +222,7 @@ BEGIN
         MENUITEM "DEBUG2 - horizontal line\tF2", IDM_DEBUG2
         MENUITEM "DEBUG1 - two point horiz line\tF1", IDM_DEBUG1
         MENUITEM SEPARATOR
-        MENUITEM "ALT-DEBUG12 - Mars 200x200 8d 1.4diag pythag\tALT-F12", 
-                                                IDM_ALTDEBUG12
+        MENUITEM "ALT-DEBUG12 - Mars 200x200 8d 1.4diag pythag\tALT-F12", IDM_ALTDEBUG12
         MENUITEM "ALT-DEBUG11 - Square Maze\tALT-F11", IDM_ALTDEBUG11
         MENUITEM "ALT-DEBUG10 - Unicursal Maze\tALT-F10", IDM_ALTDEBUG10
         MENUITEM "ALT-DEBUG9 - Hex Maze\tALT-F9", IDM_ALTDEBUG9
@@ -246,10 +231,8 @@ BEGIN
         MENUITEM "ALT-DEBUG5 - Random points/map\tALT-F5", IDM_ALTDEBUG5
         MENUITEM "ALT-DEBUG1 - Gate Maze\tALT-F1", IDM_ALTDEBUG1
         MENUITEM SEPARATOR
-        MENUITEM "CTRL-DEBUG12 - Clutter, Random [MULTI-AI]\tCTRL-F12", 
-                                                IDM_CTRLDEBUG12
-        MENUITEM "CTRL-DEBUG5 - Random map [MULTI-AI]\tCTRL-F5", 
-                                                IDM_CTRLDEBUG5
+        MENUITEM "CTRL-DEBUG12 - Clutter, Random [MULTI-AI]\tCTRL-F12", IDM_CTRLDEBUG12
+        MENUITEM "CTRL-DEBUG5 - Random map [MULTI-AI]\tCTRL-F5", IDM_CTRLDEBUG5
     END
     POPUP "S&peed"
     BEGIN
@@ -266,10 +249,8 @@ BEGIN
             MENUITEM "1 (slow, see every iteration)\t-", IDM_ITERATIONS_1
             MENUITEM "10",                          IDM_ITERATIONS_10
             MENUITEM "100\t/",                      IDM_ITERATIONS_100
-            MENUITEM "1000 (very fast, usually best)\t*", 
-                                                    IDM_ITERATIONS_1000
-            MENUITEM "10000 (complex maps in a few passes)", 
-                                                    IDM_ITERATIONS_10000
+            MENUITEM "1000 (very fast, usually best)\t*", IDM_ITERATIONS_1000
+            MENUITEM "10000 (complex maps in a few passes)", IDM_ITERATIONS_10000
             MENUITEM "Entire map before displaying\t+", IDM_ITERATIONS_FULL
         END
     END
@@ -289,7 +270,7 @@ END
 // Accelerator
 //
 
-IDC_PATHFINDER2D ACCELERATORS MOVEABLE PURE 
+IDC_PATHFINDER2D ACCELERATORS
 BEGIN
     "'",            IDM_PRESEARCH,          ASCII,  NOINVERT
     ",",            IDM_DIAGONAL_COST_1,    ASCII,  NOINVERT
@@ -370,23 +351,19 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 230, 151
-STYLE WS_POPUP | WS_CAPTION | WS_THICKFRAME
+IDD_ABOUTBOX DIALOGEX 0, 0, 267, 152
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_THICKFRAME
 CAPTION "About PathFinder2D"
-FONT 8, "System"
+FONT 8, "System", 0, 0, 0x0
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
-    LTEXT           "PathFinder2D Version 1.26 FINAL",IDC_STATIC,62,7,119,8,
-                    SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,231,6,30,11,WS_GROUP
+    LTEXT           "PathFinder2D Version 1.30",IDC_STATIC,62,7,119,8,SS_NOPREFIX
     LTEXT           "by Lewis Sellers (AKA Min)",IDC_STATIC,62,15,119,8
-    LTEXT           "Copyright (C) May/June/July 2003, June 2004",IDC_STATIC,
-                    62,24,164,8
+    LTEXT           "Copyright (C) May/June/July 2003, June 2004, Feb 2017",IDC_STATIC,62,24,197,8
     LTEXT           "Intrafoundation.com",IDC_STATIC,62,49,119,8
-    LTEXT           "Brought to you by the sound stylings of the new Linkin Park CD.",
-                    IDC_STATIC,1,72,220,10
-    CONTROL         130,IDC_STATIC,"Static",SS_BITMAP,0,0,58,72
-    LTEXT           "(With a little help from Nickelback and Radiohead.)",
-                    IDC_STATIC,0,82,219,12
+    LTEXT           "Brought to you by the sound stylings of the new Linkin Park CD.",IDC_STATIC,1,72,220,10
+    CONTROL         IDB_PATHFINDER2D,IDC_STATIC,"Static",SS_BITMAP,0,0,58,72
+    LTEXT           "(With a little help from Nickelback and Radiohead.)",IDC_STATIC,0,82,219,12
 END
 
 
@@ -396,7 +373,7 @@ END
 // TEXTINCLUDE
 //
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
     "#include ""windows.h""\r\n"
@@ -405,13 +382,13 @@ BEGIN
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "\r\n"
     "\0"
 END
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
@@ -425,11 +402,12 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
-        BOTTOMMARGIN, 141
+        RIGHTMARGIN, 230
+        BOTTOMMARGIN, 142
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -440,31 +418,33 @@ END
 // Bitmap
 //
 
-IDB_PATHFINDER2D        BITMAP  DISCARDABLE     "PathFinder2D.dib"
+IDB_PATHFINDER2D        BITMAP                  "PathFinder2D.dib"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // WAVE
 //
 
-IDR_WAVE_ABOUT          WAVE    DISCARDABLE     "PathFinder2D_about.wav"
+IDR_WAVE_ABOUT          WAVE                    "PathFinder2D_about.wav"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Cursor
 //
 
-IDC_POINTER             CURSOR  DISCARDABLE     "arrow.cur"
+IDC_POINTER             CURSOR                  "arrow.cur"
 
-#ifndef _MAC
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,26,0,0
- PRODUCTVERSION 1,26,0,0
+ FILEVERSION 1,30,0,0
+ PRODUCTVERSION 1,30,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -479,18 +459,15 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "Programmed by Lewis Sellers, http://www.intrafoundation.com\0"
-            VALUE "CompanyName", "Intrafoundation Software\0"
-            VALUE "FileDescription", "PathFinder2D\0"
-            VALUE "FileVersion", "1, 26, 0, 0\0"
-            VALUE "InternalName", "PathFinder2D\0"
-            VALUE "LegalCopyright", "Copyright © 2003, 2004\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "PathFinder2D.exe\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Intrafoundation Software PathFinder2D\0"
-            VALUE "ProductVersion", "1, 26, 0, 0\0"
-            VALUE "SpecialBuild", "\0"
+            VALUE "Comments", "Programmed by Lewis Sellers, http://www.intrafoundation.com"
+            VALUE "CompanyName", "Intrafoundation Software"
+            VALUE "FileDescription", "PathFinder2D"
+            VALUE "FileVersion", "1.30.0.0"
+            VALUE "InternalName", "PathFinder2D"
+            VALUE "LegalCopyright", "Copyright © 2003, 2004, 2017"
+            VALUE "OriginalFilename", "PathFinder2D.exe"
+            VALUE "ProductName", "Intrafoundation Software PathFinder2D"
+            VALUE "ProductVersion", "1.30.0.0"
         END
     END
     BLOCK "VarFileInfo"
@@ -499,7 +476,16 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ABOUTBOX AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -507,13 +493,13 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_APP_TITLE           "PathFinder2D v1.26 FINAL- Intrafoundation.com"
+    IDS_APP_TITLE           "PathFinder2D v1.30 - Intrafoundation.com"
     IDC_PATHFINDER2D        "PATHFINDER2D"
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
