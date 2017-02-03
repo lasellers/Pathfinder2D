@@ -5,7 +5,7 @@
 
 PathFinder2D is an open-source experiment in various 2D shortest-path algorithms and techniques. Primary conversation about this software originally occured in the newsgroup news://comp.ai.games (2004).
 
-![Calc](https://github.com/lasellers/Pathfinder2D/blob/master/screenshot.png)
+![Pathfinder2D](https://github.com/lasellers/Pathfinder2D/blob/master/screenshot1.png)
 
 This software was originally written in C++ using MSVC++ 6 Professional SP5 + MS Platform SDK.
 
