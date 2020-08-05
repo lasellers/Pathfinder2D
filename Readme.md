@@ -65,8 +65,8 @@ Thank you.
 --Lewis Sellers. A.K.A. “Min”
 
 June 2004.
-v1.25 ? Not sure what changes we made to 1.25 as it wasn’t logged. Presumably the OpenGL 3D code.
-v1.24	July 19th 2003-07-19	Started to add some OpenGL animation code. For the future there are basically 7 areas of improvement for PathFinder2D:
+* v1.25 ? Not sure what changes we made to 1.25 as it wasn’t logged. Presumably the OpenGL 3D code.
+* v1.24	July 19th 2003-07-19	Started to add some OpenGL animation code. For the future there are basically 7 areas of improvement for PathFinder2D:
 1)	Completing/Expanding the 3d animation code.
 2)	Adding as many shortest-path algorithms as exist for 2d maps
 3)	Improving the code for all classes of this program
@@ -74,28 +74,28 @@ v1.24	July 19th 2003-07-19	Started to add some OpenGL animation code. For the fu
 5)	Adding option to use multilayer maps
 6)	Maybe adding in a Daedulas-like maze generator or two for testing purposes :--)
 7)	Adding proper algorithm descriptions to the help file.
-v1.23 Final	Added Best-First. Cleaned up various other things including menus. Considered making help CHMs. Cleaned up maps and added more Daedalus maze maps. Fixed a lockup bug that could happen with Dijkstra’s paint function when you changed start positions.
-v1.22 Final	Pathfinder2D was listed on gameai.com. Because of this I promoted the dev version of A* v4 to it’s own Alg class, so that anyone wanting to experiment with their own variants can simply use the “development” algorithm class.
+* v1.23 Final	Added Best-First. Cleaned up various other things including menus. Considered making help CHMs. Cleaned up maps and added more Daedalus maze maps. Fixed a lockup bug that could happen with Dijkstra’s paint function when you changed start positions.
+* v1.22 Final	Pathfinder2D was listed on gameai.com. Because of this I promoted the dev version of A* v4 to it’s own Alg class, so that anyone wanting to experiment with their own variants can simply use the “development” algorithm class.
 Have a map that crashes pathfinder? Send it in.
 Added Gates Maze to explore effects of large number of open nodes. A* v3 and v4 are perhaps a little too eager to find the best route and can tend to wander erratically. Hm.
-v1.21 Final	Less bugs. J Mainly in linked list A*. Stay tuned for PathFinder3D. ;-)
-v1.20 Final	Added “presearch” to avoid pathing when there is no path. Aside from possible bug fixes and user contributions (don’t be shy) this is probably going to be the last update to this software for a long time. I’ve done what I wanted to do with it.
-v1.19 July 8th 2003, early morning.	Final minor cleanup.
-v1.18 July 6th 2003	 Combined A* _WORLD and _NODES into one data structure for v4 of A*. Straightened up help file.
-v1.17 July 6th 2003	 DEBUG12 16.7ms. Removed linked-lists from A* v3 as performs several other small optimizations. Getting hard to get any more ms now.
-v1.16	July 5th 2003	 DEBUG12 18.3ms. Lots of cleanup in all classes. Changed TGA load/save to inverse the data so it appears the same intensity scale in a graphics editor. TGA load can also now handle upside-down TGAs. After mulling it over finally changed the multi-AI pathing function around to a more cache-friendly FIFO priority queue system (it used to do them all simultaneously.) The newest A* is fast enough now that worrying about a few complex paths bogging down everything else isn’t as great as a concern now.
-v1.15	July 4th 2003. Stabilized the buggy 1.14 version. DEBUG1 is now DEBUG12. DEBUG12 20.9ms. 
-v1.14	Reworked most everything. A* finally works correctly (albeit slightly slower now). Because of the reworking of the path-finding algorithms all previous mentioned timings are now invalid for comparison.
-v1.12-1.13	Unreleased.
-v1.11 Final
-v1.8 - 1.10	 Bugs. Added DrawMode. Cut A* speed by another 1/3.
-v1.7	Added new A* using double linked-lists. Runs in 1/3 time of old implementation. Major class changes to make adding new algs easier.
-v1.6	A* seems "fixed" with a weight of 1.0. Hm. Also changed Dijkstra to linked-list, which made it about exactly 50x faster. One of these days I'll make A* linked-list too. (See _AStar.cpp). Few more suggestions by Eternal on comp.ai.games.
-v1.5	Added BFS. Fixed Dijkstra. Moved "common" functions to Algorithm.cpp. Changed BFS to have overlapping FIFO buffer for speed. A* still doesn't exactly work right.
-v1.4	Changed name from AStar to PathFinder. Added Dijkstra.
-v1.3	Reworked to do faster add/deletes. Still needs a sorted list for finding best f. Added high-resolution performance counter by suggestion of Eternal Vigilance. Also various tweak suggestions by Michael Horsch and Justin Heyes-Jones from comp.ai.games.
-v1.2	Minor debuggings + (fairly) significant speed optimizations.
-v1.1	Fixed many, many bugs. Added timers, etc.
+* v1.21 Final	Less bugs. J Mainly in linked list A*. Stay tuned for PathFinder3D. ;-)
+* v1.20 Final	Added “presearch” to avoid pathing when there is no path. Aside from possible bug fixes and user contributions (don’t be shy) this is probably going to be the last update to this software for a long time. I’ve done what I wanted to do with it.
+* v1.19 July 8th 2003, early morning.	Final minor cleanup.
+* v1.18 July 6th 2003	 Combined A* _WORLD and _NODES into one data structure for v4 of A*. Straightened up help file.
+* v1.17 July 6th 2003	 DEBUG12 16.7ms. Removed linked-lists from A* v3 as performs several other small optimizations. Getting hard to get any more ms now.
+* v1.16	July 5th 2003	 DEBUG12 18.3ms. Lots of cleanup in all classes. Changed TGA load/save to inverse the data so it appears the same intensity scale in a graphics editor. TGA load can also now handle upside-down TGAs. After mulling it over finally changed the multi-AI pathing function around to a more cache-friendly FIFO priority queue system (it used to do them all simultaneously.) The newest A* is fast enough now that worrying about a few complex paths bogging down everything else isn’t as great as a concern now.
+* v1.15	July 4th 2003. Stabilized the buggy 1.14 version. DEBUG1 is now DEBUG12. DEBUG12 20.9ms. 
+* v1.14	Reworked most everything. A* finally works correctly (albeit slightly slower now). Because of the reworking of the path-finding algorithms all previous mentioned timings are now invalid for comparison.
+* v1.12-1.13	Unreleased.
+* v1.11 Final
+* v1.8 - 1.10	 Bugs. Added DrawMode. Cut A* speed by another 1/3.
+* v1.7	Added new A* using double linked-lists. Runs in 1/3 time of old implementation. Major class changes to make adding new algs easier.
+* v1.6	A* seems "fixed" with a weight of 1.0. Hm. Also changed Dijkstra to linked-list, which made it about exactly 50x faster. One of these days I'll make A* linked-list too. (See _AStar.cpp). Few more suggestions by Eternal on comp.ai.games.
+* v1.5	Added BFS. Fixed Dijkstra. Moved "common" functions to Algorithm.cpp. Changed BFS to have overlapping FIFO buffer for speed. A* still doesn't exactly work right.
+* v1.4	Changed name from AStar to PathFinder. Added Dijkstra.
+* v1.3	Reworked to do faster add/deletes. Still needs a sorted list for finding best f. Added high-resolution performance counter by suggestion of Eternal Vigilance. Also various tweak suggestions by Michael Horsch and Justin Heyes-Jones from comp.ai.games.
+* v1.2	Minor debuggings + (fairly) significant speed optimizations.
+* v1.1	Fixed many, many bugs. Added timers, etc.
 
 
 ## Development
