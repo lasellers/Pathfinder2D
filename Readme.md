@@ -3,6 +3,8 @@
 ## Intrafoundation Software
 ### http://www.intrafoundation.com/products/Pathfinder2D
 
+## Note: 2020 -- Contemplating reinvisioning this as a set of Jupyter Notebook pages, with 3D visualizations
+
 PathFinder2D is an open-source experiment in various 2D shortest-path algorithms and techniques. Primary conversation about this software originally occured in the newsgroup news://comp.ai.games (2004).
 
 ![Pathfinder2D](https://github.com/lasellers/Pathfinder2D/blob/master/screenshot1.png)
